@@ -68,7 +68,7 @@
                 </fieldset>   
                 <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>                
                 <p class="submitButton">
-                    <asp:Button ID="btnSalvar" runat="server" CssClass="buttonCSS" Text="Salvar"/>
+                    <asp:Button ID="btnSalvar" runat="server" CssClass="buttonCSS" Text="Salvar" OnClick="btnSalvar_Click"/>
                 </p>
             </div>
             <!--FIM FORMULARIO-->
