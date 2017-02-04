@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="conteudo">
+    <div class="conteudo">
         <table width="100%" style="background-color: #cfcfcf;" border="0">
             <tr height="80px">
                 <td style="padding-left: 10px; color: #006cac;">
@@ -16,42 +16,62 @@
         <br />
         <div style="padding-left: 220px; padding-right: 40px;">
             <!--FORMULÁRIO-->
+            <h2>
+                Criar nova conta
+            </h2>
+            <hr />
+            <span class="failureNotification">
+                <asp:Literal ID="ErrorMessage" runat="server"></asp:Literal>
+            </span>
+            <asp:ValidationSummary ID="RegisterUserValidationSummary" runat="server" 
+                CssClass="failureNotification"  ValidationGroup="RegisterUserValidationGroup"/>
+            <div class="accountInfo">
+                <fieldset class="register">
+                    <legend>Informações da Conta</legend>
 
-            <h4>Create a new account</h4>
-        <hr />
-        <asp:ValidationSummary runat="server" CssClass="text-danger" />
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />
+                    <p>
+                        <asp:Label ID="lblUsuario" runat="server">Usuário:</asp:Label>
+                        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="UsuarioValidator" runat="server" ControlToValidate="TxtUsuario" 
+                            ErrorMessage="Nome obrigatório">  Usuário obrigatório. </asp:RequiredFieldValidator>                                
+                    </p>
+
+                    <p>
+                        <asp:Label ID="lblEmail" runat="server">E-mail:</asp:Label>
+                        <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="EmailValidator" runat="server" ControlToValidate="txtEmail" 
+                            ErrorMessage="E-mail obrigatório">E-mail Obrigatório</asp:RequiredFieldValidator>                                
+                    </p>
+
+                    <!--ADICIONAR TELEFONE-->
+                    <p>
+                        <asp:Label ID="lblTelefone" runat="server">Telefone:</asp:Label>
+                        <asp:TextBox ID="txtTelefone" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTelefone" 
+                            ErrorMessage="Telefone obrigatório">Telefone Obrigatório</asp:RequiredFieldValidator>                                
+                    </p>
+                    <!--FIM ADICIONAR TELEFONE-->
+
+                    <p>
+                        <asp:Label ID="lblSenha1" runat="server">Senha:</asp:Label>
+                        <asp:TextBox ID="txtSenha1" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="Senha1Validator" runat="server" ControlToValidate="txtSenha1" 
+                            ErrorMessage="Senha obrigatória.">Senha Obrigatória</asp:RequiredFieldValidator>                                
+                    </p>
+
+                    <p>
+                        <asp:Label ID="lblSenha2" runat="server">Confirmar Senha:</asp:Label>
+                        <asp:TextBox ID="txtSenha2" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSenha2" 
+                            ErrorMessage="Senha obrigatória.">Senha Obrigatória</asp:RequiredFieldValidator>                                
+                    </p>
+                </fieldset>   
+                <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>                
+                <p class="submitButton">
+                    <asp:Button ID="btnSalvar" runat="server" CssClass="buttonCSS" Text="Salvar"/>
+                </p>
             </div>
-        </div>
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
-            </div>
-        </div>
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
-                <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" Text="Register" CssClass="btn btn-default" />
-            </div>
-        </div>
-            <!--FIM DO FORMULÁRIO-->
+            <!--FIM FORMULARIO-->
         </div>
     </div>
 </asp:Content>
