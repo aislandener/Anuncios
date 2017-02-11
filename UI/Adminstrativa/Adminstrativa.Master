@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Adminstrativa.master.cs" Inherits="UI.Adminstrativa.Adminstrativa" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -25,9 +26,11 @@
      <div style="background-color: #075f09; position: absolute; height: 110px; width: 100%;">
     </div>
     <div class="conteudoHeader">
+        <!--LOGIN-->
         <div id="login">
-            LOGIN
+            Bem Vindo, <b><asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label></b>
         </div>
+        <!--FIM LOGIN-->
         <div id="logo">
             <asp:HyperLink ID="HyperLink4" NavigateUrl="~/" ImageUrl="~/assets/images/logo.png" runat="server">HyperLink</asp:HyperLink>
         </div>
@@ -36,12 +39,12 @@
                 <div class="header_menu_res">
                     <ul id="nav">
                         <li id="buscarMeusAnuncios">
-                            <asp:HyperLink ID="HyperLink1"  NavigateUrl="~/Administrativa/Default.aspx" runat="server">Ver Meus Anúncios</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1"  NavigateUrl="~/Adminstrativa/Default.aspx" runat="server">Ver Meus Anúncios</asp:HyperLink>
                         </li>
                         <li id="adicionarAnuncio">
-                            <asp:HyperLink ID="HyperLink2"  NavigateUrl="~/Administrativa/AdicionarAnuncio.aspx" runat="server">Adicionar Anúncio</asp:HyperLink></li>
+                            <asp:HyperLink ID="HyperLink2"  NavigateUrl="~/Adminstrativa/AdicionarAnuncio.aspx" runat="server">Adicionar Anúncio</asp:HyperLink></li>
                         <li id="meusDados">
-                            <asp:HyperLink ID="HyperLink3"  NavigateUrl="~/Administrativa/MeusDados.aspx" runat="server">Meus Dados</asp:HyperLink></li>
+                            <asp:HyperLink ID="HyperLink3"  NavigateUrl="~/Adminstrativa/MeusDados.aspx" runat="server">Meus Dados</asp:HyperLink></li>
                     </ul>
                     <div class="clr">
                     </div>
@@ -70,9 +73,9 @@
                 <h3>
                     Encontre-nos</h3>
                 <li>
-                    <asp:Image ID="Image2" ImageUrl="~/images/Facebook_icon.png" runat="server" /></li>
+                    <asp:Image ID="Image2" ImageUrl="~/assets/images/Facebook_icon.png" runat="server" /></li>
                 <li>
-                    <asp:Image ID="Image3" ImageUrl="~/images/Twitter_icon.png" runat="server" /></li>
+                    <asp:Image ID="Image3" ImageUrl="~/assets/images/Twitter_icon.png" runat="server" /></li>
             </ul>
             <div id="newsletter">
                 <p>
@@ -81,7 +84,7 @@
                 Nome:<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> Email:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><asp:Button
                     ID="Button1" runat="server" Text="Inscrever-se" />
             </div>
-            <span class="footnote">&copy; Copyright &copy; 2011. Todos os direitos reservados</span>
+            <span class="footnote">&copy; Copyright &copy;</span>
         </div>
     </div>
     </form>

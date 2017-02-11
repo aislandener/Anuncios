@@ -1,4 +1,5 @@
-﻿using Modelos;
+﻿using BLL;
+using Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace UI
             var usu = new UsuarioInformation();
             usu.usu_nome = txtUsuario.Text;
             usu.usu_email = txtEmail.Text;
+            usu.usu_telefone = txtTelefone.Text;
             usu.usu_senha1 = txtSenha1.Text;
             usu.usu_senha2 = txtSenha2.Text;
 
@@ -39,18 +41,20 @@ namespace UI
 
                 txtEmail.Text = "";
                 txtUsuario.Text = "";
+                txtTelefone.Text = "";
                 txtSenha1.Text = "";
                 txtSenha2.Text = "";
 
 
                 //Capturar id do usuario
                 int id = obj.RetornaID(usu);
-                Response.Redirect("~/Adminstrativa/Default.apsx?id=" + id, false);
+                Session["Perfil"] = id;
+                Response.Redirect("~/Adminstrativa/Default.aspx", false);
             }
             catch (Exception)
             {
                 lblMensagem.ForeColor = System.Drawing.Color.Red;
-                lblMensagem.Text = "Senhas não conferem"
+                lblMensagem.Text = "Senhas não conferem";
             }
         }
     }

@@ -202,6 +202,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Adminstrativa\AdicionarAnuncio.aspx" />
+    <Content Include="Adminstrativa\AlterarSenha.aspx" />
     <Content Include="Adminstrativa\Default.aspx" />
     <Content Include="Adminstrativa\EditarAnuncio.aspx" />
     <Content Include="Adminstrativa\MeusDados.aspx" />
@@ -409,6 +410,13 @@
     <Compile Include="Adminstrativa\Adminstrativa.Master.designer.cs">
       <DependentUpon>Adminstrativa.Master</DependentUpon>
     </Compile>
+    <Compile Include="Adminstrativa\AlterarSenha.aspx.cs">
+      <DependentUpon>AlterarSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminstrativa\AlterarSenha.aspx.designer.cs">
+      <DependentUpon>AlterarSenha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Adminstrativa\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -513,6 +521,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\images\anuncios\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

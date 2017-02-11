@@ -2,91 +2,98 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <title></title>
-    <!-- ARQUIVOS CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />
-
+    <script type="text/javascript">
+        function alteraMenu() {
+            if (typeof linkMenu != 'undefined') {
+                if (linkMenu == "buscarAnuncio")
+                    document.getElementById("buscarAnuncio").className = "page_item current_page_item";
+                if (linkMenu == "sobre")
+                    document.getElementById("sobre").className = "page_item current_page_item";
+                if (linkMenu == "contato")
+                    document.getElementById("contato").className = "page_item current_page_item";
+            }
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body onload="alteraMenu()">
     <form id="form1" runat="server">
-        <div style="background-color: #157e0d; position: absolute; height: 110px; width: 100%"></div>
-        <!-- ÁREA DE LOGIN DO USUARIO -->
-        <div class="conteudoHeader">
-            <div id="login">
-                LOGIN
-            </div>
-            <div id="logo">
-                <!-- <asp:Image ID="Image1" ImageUrl="~/assets/images/logo.png" runat="server" /> -->
-                <asp:HyperLink ID="HyperLink4" NavigateUrl="~/Default.aspx" ImageUrl="~/assets/images/logo.png" runat="server">HyperLink</asp:HyperLink>
-            </div>
-
-            <!-- MENU -->
-            <div style="position: absolute; top: 67px; right: -266px">
-                <div class="header_menu">
-                    <div class="header_menu_res">
-                        <ul id="nav">
-                            <li>
-                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/BuscarAnuncio.aspx" runat="server">Buscar Anúncio</asp:HyperLink>
-                            </li>
-                            <li>
-                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Sobre.aspx" runat="server">Sobre</asp:HyperLink>
-                            </li>
-                            <li>
-                                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Contato.aspx" runat="server">Contato</asp:HyperLink>
-                            </li>
-                        </ul>
-                        <div class="clr"></div>
+    <div style="background-color: #075f09; position: absolute; height: 110px; width: 100%;">
+    </div>
+    <div class="conteudoHeader">
+        <!--LOGIN-->
+        <div id="login">
+            <asp:Label ID="lblUsuario" runat="server" Text="">Olá visitante, 
+                [<asp:HyperLink ID="HyperLink6" NavigateUrl="~/Cadastro.aspx" runat="server"> 
+                    Cadastre-se </asp:HyperLink>] 
+                ou 
+                [<asp:HyperLink ID="HyperLink7" NavigateUrl="~/Login.aspx" runat="server">
+                    Faça-Login</asp:HyperLink>]
+            </asp:Label>
+        </div>
+        <!--FIM LOGIN-->
+        
+        <div id="logo">
+            <asp:HyperLink ID="HyperLink4" NavigateUrl="~/" ImageUrl="~/assets/images/logo.png" runat="server">HyperLink</asp:HyperLink>
+        </div>
+        <div style="position: absolute; top: 67px; right: -266px;">
+            <div class="header_menu">
+                <div class="header_menu_res">
+                    <ul id="nav">
+                        <li id="buscarAnuncio">
+                            <asp:HyperLink ID="HyperLink1"  NavigateUrl="~/BuscarAnuncio.aspx" runat="server">Buscar Anúncios</asp:HyperLink>
+                        </li>
+                        <li id="sobre">
+                            <asp:HyperLink ID="HyperLink2"  NavigateUrl="~/Sobre.aspx" runat="server">Sobre</asp:HyperLink></li>
+                        <li id="contato">
+                            <asp:HyperLink ID="HyperLink3"  NavigateUrl="~/Contato.aspx" runat="server">Contato</asp:HyperLink></li>
+                    </ul>
+                    <div class="clr">
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-
-            <div id="footer">
-                <div class="conteudoFooter">
-                    <ul class="contacts">
-                        <h3>Contate-nos</h3>
-                        <li>
-                            <span>Email</span>
-                            <p>: contato@tudoanuncios.com.br</p>
-                        </li>
-                        <li>
-                            <span>Endereço</span>
-                            <p>: 189 Av. Iraí, Centro - 54.789-906</p>
-                        </li>
-                        <li>
-                            <span>Telefone</span>
-                            <p>: 117-6837-9187</p>
-                        </li>
-                    </ul>
-                    <ul id="connect">
-                        <h3>Encontre-nos</h3>
-                        <li>
-                            <asp:Image ID="Image2" ImageUrl="~/assets/images/Facebook_icon.png" runat="server" />
-                        </li>
-                        <li>
-                            <asp:Image ID="Image3" ImageUrl="~/assets/images/Twitter_icon.png" runat="server" />
-                        </li>
-                    </ul>
-                    <div id="newsletter">
-                        <p><b>Inscreva-se e receba nossas novidades</b></p>
-                        Nome:
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        Email:
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-
-                        <asp:Button ID="Button1" runat="server" Text="Inscreva-se" />
-                    </div>
-                    <span class="footnote">&copy; Copyright &copy;</span>
-                </div>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="footer">
+        <div class="conteudoFooter">
+            <ul class="contacts">
+                <h3>
+                    Contate-nos</h3>
+                <li><span>Email</span><p>
+                    : contato@tudoanuncios.com.br</p>
+                </li>
+                <li><span>Endereço</span><p>
+                    : 189 Av. Iraí, Centro - 54.789-906</p>
+                </li>
+                <li><span>Telefone</span><p>
+                    : 117-6837-9187</p>
+                </li>
+            </ul>
+            <ul id="connect">
+                <h3>
+                    Encontre-nos</h3>
+                <li>
+                    <asp:Image ID="Image2" ImageUrl="~/assets/images/Facebook_icon.png" runat="server" /></li>
+                <li>
+                    <asp:Image ID="Image3" ImageUrl="~/assets/images/Twitter_icon.png" runat="server" /></li>
+            </ul>
+            <div id="newsletter">
+                <p>
+                    <b>Inscreva-se e receba nossas novidades</b>
+                </p>
+                Nome:<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> Email:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><asp:Button
+                    ID="Button1" runat="server" Text="Inscrever-se" />
             </div>
+            <span class="footnote">&copy; Copyright &copy; 2011. Todos os direitos reservados</span>
         </div>
+    </div>
     </form>
 </body>
 </html>

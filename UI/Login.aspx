@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="UI.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+    var linkMenu = "restrita";
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="conteudo">
@@ -16,16 +19,16 @@
         <br />
         <br />
         <div style="padding-left: 160px; padding-right: 40px;">
-            <p>                
-                Por favor, digite seu email e senha. 
-                <!--HYPERLINK-->
-                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Cadastro.aspx" runat="server">Cadastre-se</asp:HyperLink>
-                se você ainda não possui uma conta.
+            <p>
+                Por favor, digite seu email e senha. Cadastre-se se você ainda não possui uma conta.
             </p>
             <br />
             <!--FORMULARIO-->
-        <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
-        <LayoutTemplate>
+            <h2>
+                LOGIN
+            </h2>
+            <hr />
+  
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
             </span>
@@ -34,37 +37,33 @@
             <div class="accountInfo">
                 <fieldset class="login">
                     <legend>Informações da Conta</legend>
+
                     <p>
-                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Usuário:</asp:Label>
-                        <asp:TextBox ID="UserName" runat="server" CssClass="textEntry"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-                             CssClass="failureNotification" ErrorMessage="Usuário é obrigatório." ToolTip="Usuário é obrigatório." 
-                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
+                        <asp:Label ID="lblUsuario" runat="server">Usuário:</asp:Label>
+                        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                        <!--<asp:RequiredFieldValidator ID="UsuarioValidacao" runat="server" ControlToValidate="TxtUsuario" 
+                            ErrorMessage="Usuário Obrigatório">Usuário Obrigatório.</asp:RequiredFieldValidator>-->
+
                     </p>
+                    
                     <p>
-                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Senha:</asp:Label>
-                        <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
-                             CssClass="failureNotification" ErrorMessage="Senha é obrigatória." ToolTip="Senha é obrigatória." 
-                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
-                    </p>
-                    <p>
-                        <asp:CheckBox ID="RememberMe" runat="server"/>
-                        <asp:Label ID="RememberMeLabel" runat="server" AssociatedControlID="RememberMe" CssClass="inline">Mantenha-me conectado</asp:Label>
+                        <asp:Label ID="lblSenha" runat="server">Senha:</asp:Label>
+                        <asp:TextBox ID="txtSenha" runat="server" TextMode="Password"></asp:TextBox>
+                        <!--<asp:RequiredFieldValidator ID="SenhaValidator" runat="server" ControlToValidate="txtSenha" 
+                             ErrorMessage="Senha Obrigatória.">Senha Obrigatória</asp:RequiredFieldValidator>-->
                     </p>
                 </fieldset>
+                <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>
                 <p class="submitButton">
-                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="buttonCSS" Text="Log In" ValidationGroup="LoginUserValidationGroup"/>
+                     <asp:Button ID="btnLogar" runat="server" CssClass="buttonCSS" 
+                         Text="Logar" OnClick="btnLogar_Click" />
                 </p>
-                <p align="center">
-                    <asp:HyperLink ID="HyperLink2" NavigateUrl="~/RecuperacaoSenha.aspx" runat="server">Esqueci minha senha</asp:HyperLink>
+                <p class="submitButton">
+                     <asp:Button ID="btnRecuperar" runat="server" CssClass="buttonCSS" 
+                         Text="Recuperar Senha" OnClick="btnRecuperar_Click"/>
                 </p>
             </div>
-        </LayoutTemplate>
-    </asp:Login>
-
-
-            <!--FINAL DO FORMULARIO-->
+            <!--FIM FORMULARIO-->
         </div>
     </div>
 </asp:Content>
