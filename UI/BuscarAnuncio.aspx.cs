@@ -11,7 +11,27 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                var testes = Session["texto"];
+                if(Session["texto"] != null && Session["texto"] != "")
+                {
+                    txtBusca.Text = Session["texto"].ToString();
+                    ListView1.DataBind();
+                }
+            }
 
+        }
+
+        protected void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            txtBusca.Text = Session["texto"].ToString();
+            ListView1.DataBind();
+
+            if(txtBusca.Text != "")
+            {
+                lblContador.Text = "Encontrados " + DataPager1.TotalRowCount.ToString() + " anuncio(s)";
+            }
         }
     }
 }

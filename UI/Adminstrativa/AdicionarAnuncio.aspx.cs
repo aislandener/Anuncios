@@ -92,7 +92,7 @@ namespace UI.Adminstrativa
                     ext = System.IO.Path.GetExtension(FileUpload2.FileName);
                     filename2 += ext;
 
-                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename2);
+                    FileUpload2.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename2);
                     nomeArquivo = filename2.Split('.');
 
                     ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/") + nomeArquivo[0] + "t." + nomeArquivo[1], 50, 40, false);
@@ -110,7 +110,7 @@ namespace UI.Adminstrativa
                     ext = System.IO.Path.GetExtension(FileUpload3.FileName);
                     filename3 += ext;
 
-                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename3);
+                    FileUpload3.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename3);
                     nomeArquivo = filename3.Split('.');
 
                     ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename3, Server.MapPath("~/assets/images/anuncios/") + nomeArquivo[0] + "t." + nomeArquivo[1], 50, 40, false);

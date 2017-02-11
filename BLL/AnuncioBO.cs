@@ -23,5 +23,25 @@ namespace BLL
             AnuncioDAO obj = new AnuncioDAO();
             return obj.RetornaAnunciosVitrine();
         }
+
+        public UsuarioeAnuncioInformation DadosGeraisAnuncio(int id_anuncio)
+        {
+            AnuncioDAO obj = new AnuncioDAO();
+            var dados = obj.DadosGeraisAnuncio(id_anuncio);
+            return dados;
+        }
+
+        public AnuncioInformation RetornaDadosAnuncio(int id_anuncio)
+        {
+            AnuncioDAO obj = new AnuncioDAO();
+            var dados = obj.RetornaDadosAnuncio(id_anuncio);
+            return dados;
+        }
+
+        public void AlterarAnuncio(AnuncioInformation anu)
+        {
+            AnuncioDAO obj = new AnuncioDAO();
+            obj.AlterarAnuncio(anu);
+        }
     }
 }

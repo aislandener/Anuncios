@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="DetalheAnuncio.aspx.cs" Inherits="UI.DetalheAnuncio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="css/slideshow.css" />
+    <link rel="stylesheet" href="assets/css/slideshow.css" />
     <style type="text/css">
         .slideshow
         {
@@ -8,16 +8,16 @@
             margin: 50px;
         }
     </style>
-    <script type="text/javascript" src="Scripts/mootools-1.3.2-core.js"></script>
-    <script type="text/javascript" src="Scripts/mootools-1.3.2.1-more.js"></script>
-    <script type="text/javascript" src="Scripts/slideshow.js"></script>
-    <script type="text/javascript" src="Scripts/slideshow.push.js"></script>
+    <script type="text/javascript" src="assets/js/mootools-1.3.2-core.js"></script>
+    <script type="text/javascript" src="assets/js/mootools-1.3.2.1-more.js"></script>
+    <script type="text/javascript" src="assets/js/slideshow.js"></script>
+    <script type="text/javascript" src="assets/js/slideshow.push.js"></script>
     <script type="text/javascript">
     function inicializaImagens(param) {
         window.addEvent('domready', function () {
         var data = param;
         new Slideshow.Push('push', data, {
-            height: 300, hu: 'images/anuncios',
+            height: 300, hu: 'assets/images/anuncios',
             transition: 'back:in:out', width: 400
         });
         });
@@ -176,4 +176,3 @@
         </div>
     </div>
 </asp:Content>
-

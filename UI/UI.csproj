@@ -206,6 +206,10 @@
     <Content Include="Adminstrativa\Default.aspx" />
     <Content Include="Adminstrativa\EditarAnuncio.aspx" />
     <Content Include="Adminstrativa\MeusDados.aspx" />
+    <Content Include="assets\css\controller-controls.png" />
+    <Content Include="assets\css\controller.png" />
+    <Content Include="assets\css\loader.png" />
+    <Content Include="assets\css\slideshow.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\banner.jpg" />
     <Content Include="assets\images\email_icon.png" />
@@ -214,6 +218,7 @@
     <Content Include="assets\images\phone_icon.png" />
     <Content Include="assets\images\Twitter_icon.png" />
     <Content Include="assets\json\smtp.json" />
+    <Content Include="assets\json\smtp.example.json" />
     <None Include="assets\js\jquery-1.4.1-vsdoc.js" />
     <Content Include="assets\js\jquery-1.4.1.js" />
     <Content Include="assets\js\jquery-1.4.1.min.js" />

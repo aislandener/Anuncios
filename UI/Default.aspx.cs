@@ -37,5 +37,11 @@ namespace UI
                 Session["Perfil"] = null;
             }
         }
+
+        protected void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            Session["texto"] = txtBusca.Text;
+            Response.Redirect("~/BuscarAnuncio.aspx");
+        }
     }
 }

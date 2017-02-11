@@ -1,0 +1,8 @@
+﻿{
+  "host": "", //HOST DO SERVIDOR SMTP
+  "pass": "", //SENHA DO SERVIÇO
+  "port": 0, // PORTA DO SERVICO DE SMTP
+  "user": "", //USUARIO DO SERVIÇO
+  "useSSL": true //SE PRECISAR DE SSL, MUDAR AQUI
+}
+
