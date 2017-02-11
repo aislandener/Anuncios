@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AnuncianteAnuncioBO.cs" />
     <Compile Include="AnuncioBO.cs" />
+    <Compile Include="ConexaoBO.cs" />
     <Compile Include="UsuarioBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioouSenhaInvalidadoException.cs" />

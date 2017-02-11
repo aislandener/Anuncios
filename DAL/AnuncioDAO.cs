@@ -47,5 +47,23 @@ namespace DAL
                 Conexao.Desconectar();
             }
         }
+
+        public SqlDataReader RetornaAnunciosVitrine()
+        {
+            try
+            {
+                var command = new SqlCommand();
+                command.Connection = Conexao.con;
+                command.CommandText = @"SELECT top 8 anu_id, anu_titulo,anu_preco, anu_foto1
+                                            FROM anuncio ORDER BY anu_id desc";
+                Conexao.Conectar();
+                SqlDataReader dr = command.ExecuteReader();
+                return dr;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha no retorno da vitrine: " + ex.Message);
+            }
+        }
     }
 }

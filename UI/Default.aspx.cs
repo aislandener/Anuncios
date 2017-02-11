@@ -15,18 +15,18 @@ namespace UI
         {
             Deslogar();
 
-            //RetornaAnunciosVitrine();
+            RetornaAnunciosVitrine();
         }
 
-        /*private void RetornaAnunciosVitrine()
+        private void RetornaAnunciosVitrine()
         {
             AnuncioBO obj = new AnuncioBO();
-            DataList1.DataSource = obj.RetornaAnunciosVitrine();
+            DataList1.DataSource = obj.RetornaAnuncioVitrine();
             DataList1.DataBind();
 
             ConexaoBO con = new ConexaoBO();
             con.Desconectar();
-        }*/
+        }
 
         private void Deslogar()
         {
