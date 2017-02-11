@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +10,11 @@ namespace BLL
 {
     public class AnuncioBO
     {
-        public int InserirAnuncio()
+        public int InserirAnuncio(AnuncioInformation anu)
         {
-            throw new NotImplementedException();
+            AnuncioDAO obj = new AnuncioDAO();
+            int id = obj.InserirAnuncio(anu);
+            return id;
         }
     }
 }

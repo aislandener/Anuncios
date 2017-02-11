@@ -29,5 +29,13 @@ namespace DAL
                 con.Close();
             }
         }
+
+        public void DesconectarDataBind()
+        {
+            if(con.State == System.Data.ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
     }
 }

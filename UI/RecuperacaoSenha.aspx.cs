@@ -86,7 +86,7 @@ namespace UI
 
                 oEmail.Body = mensagem.ToString();
 
-                Modelos.SMTP json = JsonConvert.DeserializeObject<Modelos.SMTP>(File.ReadAllText(@"D:\ASP.NET Curso\Anuncios\UI\assets\json\smtp.json"));
+                Modelos.SMTP json = JsonConvert.DeserializeObject<Modelos.SMTP>(File.ReadAllText(Server.MapPath("~/assets/json/smtp.json")));
 
                 SmtpClient enviar = new SmtpClient();
                 //DIGITE AQUI O NOME DO SERVIDOR DE SMTP QUE VOCÊ IRA UTILIZAR

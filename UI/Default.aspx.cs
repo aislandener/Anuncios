@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,19 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
             Deslogar();
+
+            //RetornaAnunciosVitrine();
         }
+
+        /*private void RetornaAnunciosVitrine()
+        {
+            AnuncioBO obj = new AnuncioBO();
+            DataList1.DataSource = obj.RetornaAnunciosVitrine();
+            DataList1.DataBind();
+
+            ConexaoBO con = new ConexaoBO();
+            con.Desconectar();
+        }*/
 
         private void Deslogar()
         {

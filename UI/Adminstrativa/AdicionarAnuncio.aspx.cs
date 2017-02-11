@@ -73,31 +73,51 @@ namespace UI.Adminstrativa
                     filename1 = System.IO.Path.GetRandomFileName();
                     filename1 = filename1.Replace(".", "");
                     ext = System.IO.Path.GetExtension(FileUpload1.FileName);
+                    filename1 += ext;
 
-                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios") + filename1);
+                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename1);
                     nomeArquivo = filename1.Split('.');
 
                     ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename1, Server.MapPath("~/assets/images/anuncios/") + nomeArquivo[0] + "t." +nomeArquivo[1],50,40,false);
 
-                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename1, Server.MapPath("~/assets/images/anuncios/lv_") + nomeArquivo[0] + "t." + nomeArquivo[1], 100, 70, false);
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename1, Server.MapPath("~/assets/images/anuncios/lv_") + filename1, 100, 70, false);
 
-                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename1, Server.MapPath("~/assets/images/anuncios/vitrine_") + nomeArquivo[0] + "t." + nomeArquivo[1], 150, 110, false);
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename1, Server.MapPath("~/assets/images/anuncios/vitrine_") + filename1, 150, 110, false);
                 }
                 if (FileUpload2.HasFile)
                 {
                     //NOME DO ARQUIVO RANDOMICAMENTE
-                    filename1 = System.IO.Path.GetRandomFileName();
-                    filename1 = filename1.Replace(".", "");
+                    filename2 = System.IO.Path.GetRandomFileName();
+                    filename2 = filename2.Replace(".", "");
                     ext = System.IO.Path.GetExtension(FileUpload2.FileName);
+                    filename2 += ext;
 
-                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios") + filename2);
+                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename2);
                     nomeArquivo = filename2.Split('.');
 
                     ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/") + nomeArquivo[0] + "t." + nomeArquivo[1], 50, 40, false);
 
-                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/lv_") + nomeArquivo[0] + "t." + nomeArquivo[1], 100, 70, false);
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/lv_") + filename2, 100, 70, false);
 
-                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/vitrine_") + nomeArquivo[0] + "t." + nomeArquivo[1], 150, 110, false);
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename2, Server.MapPath("~/assets/images/anuncios/vitrine_") + filename2, 150, 110, false);
+                }
+
+                if (FileUpload3.HasFile)
+                {
+                    //NOME DO ARQUIVO RANDOMICAMENTE
+                    filename3 = System.IO.Path.GetRandomFileName();
+                    filename3 = filename1.Replace(".", "");
+                    ext = System.IO.Path.GetExtension(FileUpload3.FileName);
+                    filename3 += ext;
+
+                    FileUpload1.SaveAs(Server.MapPath("~/assets/images/anuncios/") + filename3);
+                    nomeArquivo = filename3.Split('.');
+
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename3, Server.MapPath("~/assets/images/anuncios/") + nomeArquivo[0] + "t." + nomeArquivo[1], 50, 40, false);
+
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename3, Server.MapPath("~/assets/images/anuncios/lv_") + filename3, 100, 70, false);
+
+                    ResizeImage(Server.MapPath("~/assets/images/anuncios/") + filename3, Server.MapPath("~/assets/images/anuncios/vitrine_") + filename3, 150, 110, false);
                 }
 
                 AnuncioInformation anu = new AnuncioInformation();
@@ -111,7 +131,7 @@ namespace UI.Adminstrativa
                 anu.anu_datacad = DateTime.Now;
 
                 AnuncioBO obj = new AnuncioBO();
-                int id = obj.InserirAnuncio();
+                int id = obj.InserirAnuncio(anu);
 
                 AnuncianteAnuncioInformation aai = new AnuncianteAnuncioInformation();
                 aai.fk_anu_id = id;
